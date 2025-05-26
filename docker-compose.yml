@@ -1,0 +1,42 @@
+version: '3.4'
+services:
+  weaviate:
+    image: semitechnologies/weaviate:latest
+    container_name: vectordb
+    restart: unless-stopped
+    ports:
+      - "${DB_MAIN_PORT}:${DB_MAIN_PORT}"
+      - "${DB_GRPC_PORT}:${DB_GRPC_PORT}"
+    environment:
+      - AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED=${AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED}
+      - AUTHENTICATION_APIKEY_ENABLED=${AUTHENTICATION_APIKEY_ENABLED}
+      - AUTOSCHEMA_ENABLED=${AUTOSCHEMA_ENABLED}
+      - AUTHENTICATION_APIKEY_ALLOWED_KEYS=${DB_API_KEY}   # Use the API key here
+      - AUTHENTICATION_APIKEY_USERS=${DB_USERNAME}         # You may keep this as password for user
+      - PERSISTENCE_DATA_PATH=${PERSISTENCE_DATA_PATH}
+      - QUERY_DEFAULTS_LIMIT=${QUERY_DEFAULTS_LIMIT}
+      - ENABLE_MODULES=${ENABLE_MODULES}
+      - BACKUP_FILESYSTEM_PATH=${BACKUP_FILESYSTEM_PATH}
+      - TRANSFORMERS_INFERENCE_API=${TRANSFORMERS_INFERENCE_API}
+      - CLUSTER_HOSTNAME=${CLUSTER_HOSTNAME}
+      - ASYNC_INDEXING=${ASYNC_INDEXING}                                # To maximize import speed, enable asynchronous indexing. (https://weaviate.io/developers/academy/py/zero_to_mvp/schema_and_imports/import)
+    volumes:
+      - weaviate_data:/db/vectordb
+
+  t2v-transformers:
+    container_name: embedding
+    image: semitechnologies/transformers-inference:distilbert-base-uncased
+    restart: always
+    environment:
+      - ENABLE_CUDA=${EMBEDDING_ENABLE_CUDA}
+      - TRANSFORMERS_MODEL=${EMBEDDING_MODEL}
+    ports:
+      - "${EMBEDDING_PORT}:${DB_MAIN_PORT}"
+    deploy:
+      resources:
+        limits:
+          memory: 2g
+          cpus: "1.0"
+
+volumes:
+  weaviate_data:
