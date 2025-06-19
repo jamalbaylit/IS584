@@ -1,4 +1,4 @@
-# RAG Application
+# 🧠 RAG Application
 
 A Retrieval-Augmented Generation (RAG) system built with vector database integration.
 
@@ -7,7 +7,7 @@ A Retrieval-Augmented Generation (RAG) system built with vector database integra
 - Docker and Docker Compose
 - Python 3.x
 
-## Setup Instructions
+## 🚀 Setup Instructions
 
 ### 1. Start Vector Database
 
@@ -17,7 +17,7 @@ First, start the vector database using Docker Compose:
 docker-compose up -d
 ```
 
-**Note:** For newer versions of Docker Compose, use `docker compose up -d` (without the hyphen).
+**📌 Note:** For newer versions of Docker Compose, use `docker compose up -d` (without the hyphen).
 
 ### 2. Create Data Model
 
