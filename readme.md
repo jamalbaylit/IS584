@@ -6,10 +6,20 @@ A Retrieval-Augmented Generation (RAG) system built with vector database integra
 
 - Docker and Docker Compose
 - Python 3.x
+- pip (Python package manager)
 
 ## 🚀 Setup Instructions
 
-### 1. Start Vector Database
+### 1. Install Python Dependencies
+
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+
+### 2. Start Vector Database
 
 First, start the vector database using Docker Compose:
 
@@ -19,7 +29,7 @@ docker-compose up -d
 
 **📌 Note:** For newer versions of Docker Compose, use `docker compose up -d` (without the hyphen).
 
-### 2. Create Data Model
+### 3. Create Data Model
 
 Initialize the database schema by running:
 
@@ -27,7 +37,7 @@ Initialize the database schema by running:
 python -m db.model
 ```
 
-### 3. Populate Database
+### 4. Populate Database
 
 Fill the database with initial data:
 
@@ -44,3 +54,34 @@ Follow these steps in order:
 3. `python -m db.populate`
 
 Your RAG system should now be ready to use!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
