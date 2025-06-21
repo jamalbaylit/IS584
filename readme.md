@@ -8,16 +8,22 @@ A Retrieval-Augmented Generation (RAG) system built with vector database integra
 - Python 3.x
 - pip (Python package manager)
 
+**⚠️ Note:** It is recommended to use Ubuntu operating system
+
+
 ## 🚀 Setup Instructions
 
-### 1. Install Python Dependencies
+### 1. Install Tkinter for Ubuntu
 
-Install the required Python packages:
+Install the Tkinter for figures:
 
 ```bash
 pip install -r requirements.txt
 ```
+### 1. Install Python Dependencies
 
+```bash
+sudo apt-get install python3-tk
 
 ### 2. Start Vector Database
 
