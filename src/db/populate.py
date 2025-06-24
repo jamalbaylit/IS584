@@ -5,7 +5,7 @@ from config import *
 import time
 import uuid
 import json
-from db.models import *
+from src.db.models import *
 
 
 
@@ -42,9 +42,9 @@ def main(file_path, collection_name):
 
 
 if __name__=='__main__':
-    # print('#️⃣  Total Data Count:', get_data_count(DB_DOC_COLLECTION_NAME))
+    print('#️⃣  Total Data Count:', get_data_count(DB_DOC_COLLECTION_NAME))
     main('dataset/processed.jsonl',DB_DOC_COLLECTION_NAME)
-    # print('#️⃣  Total Data Count:', get_data_count(DB_DOC_COLLECTION_NAME))
+    print('#️⃣  Total Data Count:', get_data_count(DB_DOC_COLLECTION_NAME))
     collection=get_collection(DB_DOC_COLLECTION_NAME)
     for item in collection.iterator(
         include_vector=True  # If using named vectors, you can specify ones to include e.g. ['title', 'body'], or True to include all

@@ -36,6 +36,10 @@ if __name__ == '__main__':
                 Configure.NamedVectors.text2vec_transformers(
                     name="title",
                     source_properties=["title"],
+                ),
+                Configure.NamedVectors.text2vec_transformers(
+                    name="abstract",
+                    source_properties=["abstract"],
                 )
             ],
             # vector_index_config=Configure.VectorIndex.flat(),  

@@ -1,0 +1,40 @@
+{
+  "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "python": "CPython 3.10.12",
+  "startedAt": "2025-06-24T20:43:19.329648Z",
+  "program": "-m src.evaluate.wandb_report",
+  "git": {
+    "remote": "https://github.com/jamalbaylit/IS584.git",
+    "commit": "4e65c1ea7bede50da23b4caae84ff26740f5dd38"
+  },
+  "email": "jamalbeylit@gmail.com",
+  "root": "/mnt/c/Users/Tayfun/Desktop/GitHub/Personal/IS584",
+  "host": "DESKTOP-4DIEIS4",
+  "executable": "/mnt/c/Users/Tayfun/Desktop/GitHub/Personal/IS584/venv/bin/python",
+  "cpu_count": 8,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "1081101176832",
+      "used": "98095644672"
+    }
+  },
+  "memory": {
+    "total": "7925329920"
+  },
+  "cpu": {
+    "count": 8,
+    "countLogical": 16
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "memoryTotal": "6442450944",
+      "architecture": "Ampere",
+      "uuid": "GPU-c92ce09b-2cfa-63b1-b970-bf560d2dfb18"
+    }
+  ],
+  "cudaVersion": "11.8"
+}

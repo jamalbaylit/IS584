@@ -40,7 +40,7 @@ docker-compose up -d
 Initialize the database schema by running:
 
 ```bash
-python -m db.model
+python -m src.db.models
 ```
 
 ### 4. Populate Database
@@ -48,16 +48,16 @@ python -m db.model
 Fill the database with initial data:
 
 ```bash
-python -m db.populate
+python -m src.db.populate
 ```
 
 ## Quick Start
 
-Follow these steps in order:
+Follow these steps in order to create and populate database:
 
 1. `docker-compose up -d` (or `docker compose up -d` for newer versions)
-2. `python -m db.model`
-3. `python -m db.populate`
+2. `python -m src.db.models`
+3. `python -m src.db.populate`
 
 Your RAG system should now be ready to use!
 
